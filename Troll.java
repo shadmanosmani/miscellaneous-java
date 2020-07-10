@@ -1,9 +1,7 @@
-
-/**
- * 
+/** 
 Trolls are attacking your comment section!
 
-A common way to deal with this situation is to remove all of the vowels from the trolls' comments, 
+A common way to deal with this situation is to remove all of the vowels from the trolls' comments,
 neutralizing the threat.
 
 Your task is to write a function that takes a string and return a new string with all vowels removed.
@@ -11,11 +9,10 @@ Your task is to write a function that takes a string and return a new string wit
 For example, the string "This website is for losers LOL!" would become "Ths wbst s fr lsrs LL!".
 
 Note: for this kata y isn't considered a vowel.
-
 */
+
 import java.util.*;
-public class Troll
-{
+public class Troll {
     
     public static void main() {
         
@@ -25,7 +22,6 @@ public class Troll
         String comment = scanner.nextLine();
         
         System.out.println("Neutralized comment: " + disemvowel(comment));
-        
         
     }
 
