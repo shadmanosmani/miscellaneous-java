@@ -24,17 +24,22 @@
  * 
  * 1 2 3 4 5 16 17 18 19 6 15 24 25 20 7 14 23 22 21 8 13 12 11 10 9
  **/
+import java.util.*;
 public class TheClockwiseSpiral {
 
-	static int MAX = 100;
+	static void createSpiral(int N, int a[][]) {
+	        
+	        if(N < 1) {
+	        
+	            return;
+	            
+	        }
+	        
+  		int val = 1, k = 0, l = 0;
 
-	static void createSpiral(int m, int n, int a[][]) {
-
-		int val = 1, k = 0, l = 0;
-
-		while (k < m && l < n) {
+		while (k < N && l < N) {
 			
-			for (int i = l; i < n; ++i) {
+			for (int i = l; i < N; ++i) {
 			    
 				a[k][i] = val++;
 				
@@ -42,28 +47,29 @@ public class TheClockwiseSpiral {
 
 			k++;
 
-			for (int i = k; i < m; ++i) {
+			for (int i = k; i < N; ++i) {
 			    
-				a[i][n - 1] = val++;
+				a[i][N - 1] = val++;
+				
 			}
 			
-			n--;
+			N--;
 
-			if (k < m) {
+			if (k < N) {
 			    
-				for (int i = n - 1; i >= l; --i) {
+				for (int i = N - 1; i >= l; --i) {
 				    
-					a[m - 1][i] = val++;
+					a[N - 1][i] = val++;
 					
 				}
 				
-				m--;
+				N--;
 				
 			}
 
-			if (l < n) {
+			if (l < N) {
 			    
-				for (int i = m - 1; i >= k; --i) {
+				for (int i = N - 1; i >= k; --i) {
 				    
 					a[i][l] = val++;
 					
@@ -77,17 +83,20 @@ public class TheClockwiseSpiral {
 
 	public static void main(String[] args) {
 	    
-		int m = 4, n = 4;
+		Scanner scanner = new Scanner(System.in);
 		
-		int a[][] = new int[MAX][MAX];
+		System.out.println("Enter value of N");
+		int N = scanner.nextInt();
 		
-		createSpiral(m, n, a);
+		int matrix[][] = new int[N][N];
 		
-		for (int i = 0; i < m; i++) {
+		createSpiral(N, matrix);
+		
+		for (int i = 0; i < N; i++) {
 		    
-			for (int j = 0; j < n; j++) {
+			for (int j = 0; j < N; j++) {
 			    
-				System.out.print(a[i][j] + " ");
+				System.out.print(matrix[i][j] + " ");
 				
 			}
 			
